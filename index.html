@@ -290,9 +290,7 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
 </head>
 <body>
 
-<div class="topbar">🇪🇺 EU-basiertes ASIC Mining Hosting · Österreich &nbsp;·&nbsp;
-  <a onclick="openOfferModal()" style="cursor:pointer">Jetzt unverbindliches Angebot anfragen →</a>
-</div>
+<div class="topbar">🇪🇺 EU-basiertes ASIC Mining Hosting · Jetzt unverbindliches Angebot anfragen →</div>
 
 <nav>
   <div class="logo" onclick="showPage('home')">
@@ -319,7 +317,7 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
     <div class="hero-bg"><div class="blob blob1"></div><div class="blob blob2"></div></div>
     <div class="hero-inner">
       <div>
-        <div class="hero-badge">🇦🇹 ASIC Hosting EU · Österreich</div>
+        <div class="hero-badge">🇪🇺 ASIC Hosting EU · Europa</div>
         <h1>Mining ohne<br><span class="hl">Lärm, Hitze<br>& Aufwand.</span></h1>
         <p>Ihre ASIC Miner laufen professionell, günstig und zuverlässig bei uns. Sie kassieren die Erträge – wir kümmern uns um alles andere.</p>
         <div class="hero-btns">
@@ -349,7 +347,7 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
       <div class="ti"><span>⚡</span><strong>Stabile Infrastruktur</strong></div>
       <div class="ti"><span>🌡️</span><strong>Professionelle Kühlung</strong></div>
       <div class="ti"><span>📊</span><strong>Transparente Abrechnung</strong></div>
-      <div class="ti"><span>🇪🇺</span><strong>EU-Betrieb · Österreich</strong></div>
+      <div class="ti"><span>🇪🇺</span><strong>EU-Betrieb</strong></div>
     </div>
   </div>
 
@@ -407,8 +405,11 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
       <div style="text-align:center;margin-bottom:2rem;">
         <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S19</span>
         <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21 Pro</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21+</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21XP</span>
         <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21 HYD</span>
-        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21 XP</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21 XP HYD</span>
         <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Whatsminer M30S</span>
         <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Whatsminer M60S</span>
         <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Whatsminer M63S</span>
@@ -523,6 +524,9 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
             <select id="cModel" onchange="calcModelChange()">
               <option value="3250">Antminer S19 Pro – 3.250W</option>
               <option value="3500" selected>Antminer S21 – 3.500W</option>
+              <option value="3150">Antminer S21 Pro – 3.150W</option>
+              <option value="3600">Antminer S21 XP – 3.600W</option>
+              <option value="3500">Antminer S21+ – 3.500W</option>
               <option value="5360">Antminer S21 HYD – 5.360W</option>
               <option value="5500">Antminer S21 XP HYD – 5.500W</option>
               <option value="3276">Whatsminer M60S – 3.276W</option>
@@ -571,6 +575,9 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
           <thead><tr><th>Modell</th><th>Hashrate</th><th>Leistung</th><th>Kühlung</th><th>Lieferzeit</th><th>Zustand</th><th></th></tr></thead>
           <tbody>
             <tr><td><strong>Antminer S21</strong></td><td>235 TH/s</td><td>3.500W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Antminer S21 Pro</strong></td><td>215 TH/s</td><td>3.150W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Antminer S21+</strong></td><td>250 TH/s</td><td>3.500W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Antminer S21 XP</strong></td><td>270 TH/s</td><td>3.600W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
             <tr><td><strong>Antminer S21 HYD</strong></td><td>335 TH/s</td><td>5.360W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
             <tr><td><strong>Antminer S21 XP HYD</strong></td><td>473 TH/s</td><td>5.500W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
             <tr><td><strong>Antminer S19K Pro</strong></td><td>120 TH/s</td><td>2.760W</td><td>Luft</td><td>24 Std.</td><td><span class="badge br">Refurb</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
@@ -623,10 +630,10 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
       <div class="contact-grid reveal">
         <div class="c-aside">
           <h3>ASIC Hosting EU</h3>
-          <p>Professionelles ASIC Miner Hosting in Österreich / EU. Ob Einsteiger oder Profi – wir haben den passenden Tarif.</p>
+          <p>Professionelles ASIC Miner Hosting in der EU. Ob Einsteiger oder Profi – wir haben den passenden Tarif.</p>
           <div class="c-item"><div class="c-ico">✉️</div><div><strong>E-Mail</strong><span>euasichosting@energy-bit.at</span></div></div>
           <div class="c-item"><div class="c-ico">⏰</div><div><strong>Antwortzeit</strong><span>In der Regel innerhalb 24h</span></div></div>
-          <div class="c-item"><div class="c-ico">🇦🇹</div><div><strong>Standort</strong><span>Österreich / Europäische Union</span></div></div>
+          <div class="c-item"><div class="c-ico">🇪🇺</div><div><strong>Standort</strong><span>Europäische Union</span></div></div>
           <div style="background:var(--light);border-radius:12px;padding:1.5rem;margin-top:1.5rem;">
             <div style="font-weight:700;margin-bottom:.5rem;">📋 Tarif-Erinnerung</div>
             <div style="font-size:.84rem;color:var(--muted);line-height:1.7;">
@@ -642,7 +649,6 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
           <h3>📩 Nachricht senden</h3>
           <!-- Kontaktformular mit echten POST an FormSubmit.co -->
           <form id="cForm" onsubmit="return sendForm(this, 'cfOk')">
-            <!-- Felder mit name-Attributen für FormSubmit -->
             <input type="hidden" name="_subject" value="Kontaktanfrage – ASIC Hosting EU">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="_honey" style="display:none">
@@ -651,10 +657,10 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
               <div class="fg"><label>Nachname *</label><input type="text" name="Nachname" placeholder="Mustermann" required></div>
             </div>
             <div class="fg"><label>E-Mail *</label><input type="email" name="E-Mail" placeholder="ihre@email.com" required></div>
-            <div class="fg"><label>Telefon / WhatsApp</label><input type="tel" name="Telefon" placeholder="+43 ..."></div>
+            <div class="fg"><label>Telefon / WhatsApp</label><input type="tel" name="Telefon" placeholder="z.B. +49 123 456789"></div>
             <div class="form-row">
               <div class="fg"><label>Anzahl Miner</label><input type="number" name="Anzahl Miner" placeholder="z.B. 5" min="1"></div>
-              <div class="fg"><label>Miner-Modell</label><input type="text" name="Miner-Modell" placeholder="z.B. S21"></div>
+              <div class="fg"><label>Miner-Modell</label><input type="text" name="Miner-Modell" placeholder="z.B. S21 Pro"></div>
             </div>
             <div class="fg"><label>Nachricht *</label><textarea name="Nachricht" placeholder="Ihr Anliegen, Fragen, gewünschte Laufzeit..." required></textarea></div>
             <button type="submit" class="btn btn-primary btn-full">Nachricht senden →</button>
@@ -672,7 +678,7 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
   <div class="fg-grid">
     <div class="fb">
       <div class="fb-logo"><div class="logo-icon">⛏️</div>ASIC<span style="color:var(--accent2)">Hosting</span>EU</div>
-      <p>Professionelles ASIC Miner Hosting in Österreich. Günstig, transparent, zuverlässig – 4 Tarife für jeden Bedarf.</p>
+      <p>Professionelles ASIC Miner Hosting in der EU. Günstig, transparent, zuverlässig – 4 Tarife für jeden Bedarf.</p>
     </div>
     <div class="fc">
       <h4>Navigation</h4>
@@ -694,7 +700,7 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
       </ul>
     </div>
   </div>
-  <div class="fb-bottom">&copy; 2026 ASIC Hosting EU · Österreich · Alle Rechte vorbehalten</div>
+  <div class="fb-bottom">&copy; 2026 ASIC Hosting EU · Alle Rechte vorbehalten</div>
 </footer>
 
 <!-- OFFER MODAL -->
@@ -731,7 +737,7 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
           </select>
         </div>
       </div>
-      <div class="fg"><label>Miner-Modell(e)</label><input type="text" name="Miner-Modell" placeholder="z.B. Antminer S21, Whatsminer M60S"></div>
+      <div class="fg"><label>Miner-Modell(e)</label><input type="text" name="Miner-Modell" placeholder="z.B. Antminer S21 Pro, S21 XP"></div>
       <div class="fg"><label>Nachricht</label><textarea name="Nachricht" placeholder="Fragen, weitere Infos..."></textarea></div>
       <button type="submit" class="btn btn-primary btn-full">Angebot anfordern →</button>
       <div class="form-note">Wir senden Ihre Anfrage direkt an euasichosting@energy-bit.at</div>
@@ -852,7 +858,6 @@ async function sendForm(form, successId) {
       form.reset();
       successDiv.style.display = 'block';
       setTimeout(() => { successDiv.style.display = 'none'; }, 5000);
-      // Modal schließen falls Angebotsformular
       if (successId === 'ofOk') closeOffer();
     } else {
       alert('Fehler beim Senden. Bitte später erneut versuchen oder direkt mailen.');
@@ -860,7 +865,7 @@ async function sendForm(form, successId) {
   } catch (error) {
     alert('Netzwerkfehler. Bitte später erneut versuchen.');
   }
-  return false; // Verhindert normales Absenden
+  return false;
 }
 
 // Initialisierung
