@@ -10,10 +10,11 @@
   --primary:#07111f;--primary2:#0d1e35;--accent:#2563eb;--accent2:#38bdf8;
   --gold:#f59e0b;--green:#10b981;--light:#f0f4ff;--border:#e2e8f0;
   --text:#1e293b;--muted:#64748b;--radius:14px;--shadow:0 8px 32px rgba(0,0,0,0.10);
+  --bg-light:#f9fafc;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg-light);overflow-x:hidden;}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#0d1e35;}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
 
 /* TOPBAR */
@@ -586,20 +587,28 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
   </section>
 </div>
 
-<!-- ══ PAGE: FAQ ══ -->
+<!-- ══ PAGE: FAQ (NUR 3 FRAGEN) ══ -->
 <div class="page" id="page-faq">
   <section style="padding-top:4rem;">
     <div class="si">
       <div class="sh reveal"><div class="pill">FAQ</div><h2>Häufige Fragen</h2><p>Antworten auf die wichtigsten Fragen zu unserem Hosting.</p></div>
       <div class="faq-list reveal">
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Was kostet das Hosting genau?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Wir bieten 4 Tarife: 0,085€/kWh (1 eigenes Gerät, bis 6 Mon.), 0,080€/kWh (1 eigenes Gerät, ab 6 Mon.), 0,075€/kWh (5 Geräte über uns, ab 6 Mon.) und 0,065€/kWh (10 Geräte über uns, ab 6 Mon.). Abgerechnet wird nach tatsächlichem Stromverbrauch – keine versteckten Kosten.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Was bedeutet „Kauf über uns"?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Wir vermitteln ASIC Miner (Antminer, Whatsminer, Avalon) von europäischen Lieferanten. Wenn Sie Ihre Miner über uns kaufen statt selbst zu beschaffen, erhalten Sie automatisch einen günstigeren Hosting-Tarif. Die Lieferung erfolgt direkt ins Rechenzentrum.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie wird abgerechnet?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Monatlich nach tatsächlichem Stromverbrauch in kWh. Sie zahlen nur den Strom, den Ihre Miner wirklich verbrauchen – keine Pauschalgebühren, volle Transparenz.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie lange dauert die Inbetriebnahme?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Nach Erhalt Ihres Miners richten wir ihn innerhalb von ca. 5 Tagen vollständig ein. Bei einigen Modellen ist ein Start innerhalb von 24 Stunden möglich.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Gibt es eine Mindestlaufzeit?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Für Tarif 1 (0,085€/kWh) gibt es keine feste Mindestlaufzeit ab 1 Monat. Für die günstigeren Tarife (0,080€, 0,075€, 0,065€) gilt eine Mindestlaufzeit von 6 Monaten.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Welche Miner werden unterstützt?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Alle gängigen ASIC Modelle: Antminer S19/S21/S21 HYD/S21 XP HYD, Whatsminer M30S/M60S/M63S, Avalon A14/A15/A16/A1566 HYD und viele mehr. Auch Hydro- und Immersion-Miner sind willkommen.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie sicher ist meine Hardware?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Das Rechenzentrum ist physisch gesichert mit Zutrittskontrolle und Videoüberwachung. Details zu Haftung und Versicherung klären wir im individuellen Vertrag.</div></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie nehme ich Kontakt auf?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Einfach das Kontaktformular auf der Kontaktseite ausfüllen oder direkt auf „Angebot anfragen" klicken. Wir antworten in der Regel innerhalb von 24 Stunden unter euasichosting@energy-bit.at.</div></div></div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="tfaq(this)">Gehen 100% der geschürften BTC an den Kunden?<div class="faq-ico">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Ja, 100% der geschürften BTC gehen an den Kunden. Wir behalten nichts ein – Sie erhalten die vollen Mining-Erträge.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="tfaq(this)">Kann man den Pool selber auswählen?<div class="faq-ico">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Ja, der Pool kann selbst ausgewählt werden. Sie geben einfach die Zugangsdaten an, wir konfigurieren den Miner entsprechend.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="tfaq(this)">Können Betriebssystem und Verbrauch selbst gewählt werden?<div class="faq-ico">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Ja, Betriebssystem (z.B. alternative Firmware wie Hive oder Braiins) und Verbrauchseinstellungen (z.B. Untertakten) können Sie selbst bestimmen. Wir setzen Ihre Wünsche um.</div></div>
+        </div>
+
       </div>
       <div style="text-align:center;margin-top:3rem;"><button class="btn btn-primary" onclick="showPage('contact')">Weitere Fragen? Kontakt aufnehmen →</button></div>
     </div>
@@ -631,21 +640,26 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
         </div>
         <div class="c-form-card">
           <h3>📩 Nachricht senden</h3>
-          <form id="cForm">
+          <!-- Kontaktformular mit echten POST an FormSubmit.co -->
+          <form id="cForm" onsubmit="return sendForm(this, 'cfOk')">
+            <!-- Felder mit name-Attributen für FormSubmit -->
+            <input type="hidden" name="_subject" value="Kontaktanfrage – ASIC Hosting EU">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
             <div class="form-row">
-              <div class="fg"><label>Vorname *</label><input type="text" id="cfFn" placeholder="Max" required></div>
-              <div class="fg"><label>Nachname *</label><input type="text" id="cfLn" placeholder="Mustermann" required></div>
+              <div class="fg"><label>Vorname *</label><input type="text" name="Vorname" placeholder="Max" required></div>
+              <div class="fg"><label>Nachname *</label><input type="text" name="Nachname" placeholder="Mustermann" required></div>
             </div>
-            <div class="fg"><label>E-Mail *</label><input type="email" id="cfEm" placeholder="ihre@email.com" required></div>
-            <div class="fg"><label>Telefon / WhatsApp</label><input type="tel" id="cfTel" placeholder="+43 ..."></div>
+            <div class="fg"><label>E-Mail *</label><input type="email" name="E-Mail" placeholder="ihre@email.com" required></div>
+            <div class="fg"><label>Telefon / WhatsApp</label><input type="tel" name="Telefon" placeholder="+43 ..."></div>
             <div class="form-row">
-              <div class="fg"><label>Anzahl Miner</label><input type="number" id="cfMn" placeholder="z.B. 5" min="1"></div>
-              <div class="fg"><label>Miner-Modell</label><input type="text" id="cfMod" placeholder="z.B. S21"></div>
+              <div class="fg"><label>Anzahl Miner</label><input type="number" name="Anzahl Miner" placeholder="z.B. 5" min="1"></div>
+              <div class="fg"><label>Miner-Modell</label><input type="text" name="Miner-Modell" placeholder="z.B. S21"></div>
             </div>
-            <div class="fg"><label>Nachricht *</label><textarea id="cfMsg" placeholder="Ihr Anliegen, Fragen, gewünschte Laufzeit..." required></textarea></div>
+            <div class="fg"><label>Nachricht *</label><textarea name="Nachricht" placeholder="Ihr Anliegen, Fragen, gewünschte Laufzeit..." required></textarea></div>
             <button type="submit" class="btn btn-primary btn-full">Nachricht senden →</button>
-            <div class="form-note">Öffnet Ihren Mail-Client vorausgefüllt an euasichosting@energy-bit.at</div>
-            <div class="success-msg" id="cfOk">✅ Mail-Client geöffnet! Bitte die E-Mail absenden. Wir melden uns bald.</div>
+            <div class="form-note">Wir senden Ihre Nachricht direkt an euasichosting@energy-bit.at</div>
+            <div class="success-msg" id="cfOk">✅ Nachricht wurde gesendet! Wir melden uns bald.</div>
           </form>
         </div>
       </div>
@@ -690,34 +704,38 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
     <h2>🚀 Angebot anfragen</h2>
     <p>Kostenloses, unverbindliches Angebot – Antwort innerhalb von 24h.</p>
     <div class="modal-hint" id="mHint"></div>
-    <form id="ofForm">
+    <!-- Angebotsformular mit echten POST an FormSubmit.co -->
+    <form id="ofForm" onsubmit="return sendForm(this, 'ofOk')">
+      <input type="hidden" name="_subject" value="Angebotsanfrage – ASIC Hosting EU">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
       <div class="form-row">
-        <div class="fg"><label>Vorname *</label><input type="text" id="ofFn" placeholder="Max" required></div>
-        <div class="fg"><label>Nachname *</label><input type="text" id="ofLn" placeholder="Mustermann" required></div>
+        <div class="fg"><label>Vorname *</label><input type="text" name="Vorname" placeholder="Max" required></div>
+        <div class="fg"><label>Nachname *</label><input type="text" name="Nachname" placeholder="Mustermann" required></div>
       </div>
-      <div class="fg"><label>E-Mail *</label><input type="email" id="ofEm" placeholder="ihre@email.com" required></div>
+      <div class="fg"><label>E-Mail *</label><input type="email" name="E-Mail" placeholder="ihre@email.com" required></div>
       <div class="fg">
         <label>Geräte-Quelle</label>
-        <select id="ofSrc" onchange="checkHint()">
-          <option value="own">Eigenes Gerät (bereits vorhanden)</option>
-          <option value="buy">Kauf über uns</option>
+        <select name="Geräte-Quelle" onchange="checkHint()">
+          <option value="Eigenes Gerät">Eigenes Gerät (bereits vorhanden)</option>
+          <option value="Kauf über uns">Kauf über uns</option>
         </select>
       </div>
       <div class="form-row">
-        <div class="fg"><label>Anzahl Miner *</label><input type="number" id="ofMn" placeholder="z.B. 5" min="1" required oninput="checkHint()"></div>
+        <div class="fg"><label>Anzahl Miner *</label><input type="number" name="Anzahl Miner" placeholder="z.B. 5" min="1" required oninput="checkHint()"></div>
         <div class="fg"><label>Laufzeit</label>
-          <select id="ofDur" onchange="checkHint()">
-            <option value="1">1 Monat</option><option value="2">2 Monate</option>
-            <option value="3">3 Monate</option><option value="6">6 Monate</option>
-            <option value="12">12 Monate</option><option value="24">24 Monate</option>
+          <select name="Laufzeit">
+            <option value="1 Monat">1 Monat</option><option value="2 Monate">2 Monate</option>
+            <option value="3 Monate">3 Monate</option><option value="6 Monate">6 Monate</option>
+            <option value="12 Monate">12 Monate</option><option value="24 Monate">24 Monate</option>
           </select>
         </div>
       </div>
-      <div class="fg"><label>Miner-Modell(e)</label><input type="text" id="ofMod" placeholder="z.B. Antminer S21, Whatsminer M60S"></div>
-      <div class="fg"><label>Nachricht</label><textarea id="ofMsg" placeholder="Fragen, weitere Infos..."></textarea></div>
+      <div class="fg"><label>Miner-Modell(e)</label><input type="text" name="Miner-Modell" placeholder="z.B. Antminer S21, Whatsminer M60S"></div>
+      <div class="fg"><label>Nachricht</label><textarea name="Nachricht" placeholder="Fragen, weitere Infos..."></textarea></div>
       <button type="submit" class="btn btn-primary btn-full">Angebot anfordern →</button>
-      <div class="form-note">Öffnet Ihren Mail-Client an euasichosting@energy-bit.at</div>
-      <div class="success-msg" id="ofOk">✅ Mail-Client geöffnet! Bitte absenden. Wir melden uns bald.</div>
+      <div class="form-note">Wir senden Ihre Anfrage direkt an euasichosting@energy-bit.at</div>
+      <div class="success-msg" id="ofOk">✅ Angebotsanfrage gesendet! Wir melden uns bald.</div>
     </form>
   </div>
 </div>
@@ -780,7 +798,6 @@ function calcCost(){
   const b=document.getElementById('crBadge');
   b.style.background=t.color+'22';b.style.border='1px solid '+t.color+'44';b.style.color=t.color;
   b.textContent='✓ '+t.label;
-  // tip
   const tip=document.getElementById('calcTip');
   if(src==='buy'&&miners>=10&&months>=6) tip.textContent='🏆 Maximaler Rabatt aktiv! Sie sparen '+savings.toFixed(2).replace('.',',')+'€ gegenüber Tarif 1.';
   else if(src==='buy'&&miners>=5&&months>=6) tip.textContent='🌟 Tarif 3 aktiv! Mit 10 Geräten über uns sparen Sie noch mehr.';
@@ -807,7 +824,8 @@ function openOfferModal(){document.getElementById('ofOvl').classList.add('open')
 function closeOffer(){document.getElementById('ofOvl').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('ofOvl').addEventListener('click',function(e){if(e.target===this)closeOffer();});
 function checkHint(){
-  const src=document.getElementById('ofSrc').value;
+  const srcEl=document.getElementById('ofSrc'); if(!srcEl) return;
+  const src=srcEl.value==='Kauf über uns'?'buy':'own';
   const mn=parseInt(document.getElementById('ofMn').value)||0;
   const dur=parseInt(document.getElementById('ofDur').value)||0;
   const t=getTariff(src,mn,dur);
@@ -817,38 +835,35 @@ function checkHint(){
   h.textContent='✓ Ihr Tarif: '+t.label+' → '+t.rate.toFixed(3).replace('.',',')+' €/kWh';
 }
 
-// ── MAILTO ──
-const EMAIL='euasichosting@energy-bit.at';
-function buildMailto(subj,fields){
-  const body=Object.entries(fields).filter(([k,v])=>v).map(([k,v])=>k+': '+v).join('
-');
-  return 'mailto:'+EMAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+// ── FORM SUBMIT (POST an FormSubmit.co) ──
+const FORM_ENDPOINT = 'https://formsubmit.co/euasichosting@energy-bit.at';
+
+async function sendForm(form, successId) {
+  const formData = new FormData(form);
+  const successDiv = document.getElementById(successId);
+
+  try {
+    const response = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.reset();
+      successDiv.style.display = 'block';
+      setTimeout(() => { successDiv.style.display = 'none'; }, 5000);
+      // Modal schließen falls Angebotsformular
+      if (successId === 'ofOk') closeOffer();
+    } else {
+      alert('Fehler beim Senden. Bitte später erneut versuchen oder direkt mailen.');
+    }
+  } catch (error) {
+    alert('Netzwerkfehler. Bitte später erneut versuchen.');
+  }
+  return false; // Verhindert normales Absenden
 }
-document.getElementById('cForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  window.location.href=buildMailto('Kontaktanfrage – ASIC Hosting EU',{
-    'Name':document.getElementById('cfFn').value+' '+document.getElementById('cfLn').value,
-    'E-Mail':document.getElementById('cfEm').value,'Telefon':document.getElementById('cfTel').value,
-    'Anzahl Miner':document.getElementById('cfMn').value,'Miner-Modell':document.getElementById('cfMod').value,
-    'Nachricht':'
-'+document.getElementById('cfMsg').value
-  });
-  document.getElementById('cfOk').style.display='block';
-});
-document.getElementById('ofForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  const src=document.getElementById('ofSrc').value==='own'?'Eigenes Gerät':'Kauf über uns';
-  window.location.href=buildMailto('Angebotsanfrage – ASIC Hosting EU',{
-    'Name':document.getElementById('ofFn').value+' '+document.getElementById('ofLn').value,
-    'E-Mail':document.getElementById('ofEm').value,'Geräte-Quelle':src,
-    'Anzahl Miner':document.getElementById('ofMn').value,
-    'Laufzeit':document.getElementById('ofDur').value+' Monate',
-    'Miner-Modell':document.getElementById('ofMod').value,
-    'Nachricht':'
-'+document.getElementById('ofMsg').value
-  });
-  document.getElementById('ofOk').style.display='block';
-});
+
+// Initialisierung
 calcCost();
 </script>
 </body>
