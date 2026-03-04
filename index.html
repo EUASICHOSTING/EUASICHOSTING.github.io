@@ -206,7 +206,7 @@ hr.cr-div{border:none;border-top:1px solid rgba(255,255,255,.07);margin:1.2rem 0
 
 /* MINER TABLE */
 .tw{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);}
-table{width:100%;border-collapse:collapse;background:#fff;min-width:680px;}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:800px;}
 thead{background:var(--primary);}
 th{color:#94a3b8;padding:.9rem 1.1rem;text-align:left;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
 td{padding:.9rem 1.1rem;border-bottom:1px solid #f1f5f9;font-size:.88rem;color:#475569;}
@@ -565,28 +565,13 @@ footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
   </section>
 </div>
 
-<!-- ══ PAGE: MINER ══ -->
+<!-- ══ PAGE: MINER (dynamisch generiert mit aktualisierten Verbrauchswerten) ══ -->
 <div class="page" id="page-miner">
   <section style="padding-top:4rem;">
     <div class="si">
       <div class="sh reveal"><div class="pill">MINER KAUFEN</div><h2>Neue & gebrauchte Miner</h2><p>Noch keinen Miner? Wir vermitteln EU-weit – direkt mit günstigerem Hosting-Tarif kombinierbar.</p></div>
-      <div class="tw reveal">
-        <table>
-          <thead><tr><th>Modell</th><th>Hashrate</th><th>Leistung</th><th>Kühlung</th><th>Lieferzeit</th><th>Zustand</th><th></th></tr></thead>
-          <tbody>
-            <tr><td><strong>Antminer S21</strong></td><td>235 TH/s</td><td>3.500W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Antminer S21 Pro</strong></td><td>215 TH/s</td><td>3.150W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Antminer S21+</strong></td><td>250 TH/s</td><td>3.500W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Antminer S21 XP</strong></td><td>270 TH/s</td><td>3.600W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Antminer S21 HYD</strong></td><td>335 TH/s</td><td>5.360W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Antminer S21 XP HYD</strong></td><td>473 TH/s</td><td>5.500W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Antminer S19K Pro</strong></td><td>120 TH/s</td><td>2.760W</td><td>Luft</td><td>24 Std.</td><td><span class="badge br">Refurb</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Whatsminer M60S</strong></td><td>230 TH/s</td><td>3.276W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Whatsminer M63S</strong></td><td>474 TH/s</td><td>6.728W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Avalon A15 Pro</strong></td><td>221 TH/s</td><td>3.400W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-            <tr><td><strong>Avalon A1566 HYD</strong></td><td>460 TH/s</td><td>6.900W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
-          </tbody>
-        </table>
+      <div class="tw reveal" id="miner-table-container">
+        <!-- Tabelle wird per JavaScript eingefügt -->
       </div>
       <p style="text-align:center;color:var(--muted);margin-top:1.2rem;font-size:.85rem;">⚠️ Miner-Kauf über uns → automatisch günstigerer Hosting-Tarif (0,075€ oder 0,065€/kWh)!</p>
       <div style="text-align:center;margin-top:1.3rem;"><button class="btn btn-primary" onclick="openOfferModal()">Modell & Preis anfragen</button></div>
@@ -754,6 +739,7 @@ function showPage(n){
   window.scrollTo({top:0,behavior:'smooth'});
   document.getElementById('nl').classList.remove('open');
   if(n==='pricing') setTimeout(calcCost,80);
+  if(n==='miner') renderMinerTable(); // Tabelle bei Bedarf rendern
   setTimeout(initReveal,60);
 }
 function toggleMenu(){document.getElementById('nl').classList.toggle('open');}
@@ -866,6 +852,109 @@ async function sendForm(form, successId) {
     alert('Netzwerkfehler. Bitte später erneut versuchen.');
   }
   return false;
+}
+
+// ── MINER TABELLE DYNAMISCH GENERIEREN (mit allen aktualisierten Verbrauchswerten) ──
+const miners = [
+  // Spitzenmodelle zuerst (Sortierung erfolgt später)
+  { model: "S21 Pro 234T", th: 234, power: "3.150 W", price: "3367,13 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21XP 270T", th: 270, power: "3.600 W", price: "4961,49 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21+ 235T", th: 235, power: "3.500 W", price: "2619,87 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21+ 216T", th: 216, power: "3.500 W", price: "2721,97 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19K Pro 110T", th: 110, power: "3.250 W", price: "639,54 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19K Pro 120T", th: 120, power: "3.250 W", price: "753,98 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19 95T Refurb", th: 95, power: "3.250 W", price: "359,04 €", cooling: "Luft", condition: "Refurb", manufacturer: "Bitmain" },
+  { model: "S19J Pro 96T Refurb", th: 96, power: "3.050 W", price: "392,70 €", cooling: "Luft", condition: "Refurb", manufacturer: "Bitmain" },
+  { model: "S19 88T Refurb", th: 88, power: "3.150 W", price: "335,49 €", cooling: "Luft", condition: "Refurb", manufacturer: "Bitmain" },
+  { model: "S19 86T", th: 86, power: "3.250 W", price: "403,92 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19XP 127T", th: 127, power: "3.250 W", price: "889,75 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19XP 110T", th: 110, power: "3.250 W", price: "856,09 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21 151T", th: 151, power: "3.500 W", price: "1398,01 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21 Immersion 215T", th: 215, power: "3.500 W", price: "2376,40 €", cooling: "Immersion", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S23 296T", th: 296, power: "3.498 W", price: "9236,30 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19eXP HYD 230T", th: 230, power: "5.000 W", price: "1192,69 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19eXP HYD 251T", th: 251, power: "5.000 W", price: "1268,98 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S19XP+ HYD 293T", th: 293, power: "5.500 W", price: "1595,48 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21eHyd 310T", th: 310, power: "5.500 W", price: "2446,98 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21eHYD 332T", th: 332, power: "5.500 W", price: "2595,19 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21+ HYD 338T", th: 338, power: "5.500 W", price: "3242,58 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21+ HYD 358T", th: 358, power: "5.500 W", price: "3498,40 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21+ HYD 395T", th: 395, power: "5.500 W", price: "3964,03 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S21XP HYD 473T", th: 473, power: "5.500 W", price: "8474,47 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "S23 HYD 580T", th: 580, power: "5.510 W", price: "16356,52 €", cooling: "Hydro", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "KS7 45T", th: 45, power: "3.080 W", price: "2414,77 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "E11 9500M", th: 9.5, power: "2.500 W", price: "2643,04 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "D9 1770G", th: 1.77, power: "2.839 W", price: "1744,74 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "X9 1000K", th: 1000, power: "2.472 W", price: "6958,64 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "L11 20G", th: 20, power: "4.200 W", price: "10255,08 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "L9 15G", th: 15, power: "3.150 W", price: "3902,32 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "L9 17G", th: 17, power: "3.360 W", price: "4860,13 €", cooling: "Luft", condition: "Neu", manufacturer: "Bitmain" },
+  { model: "M30S 88T Refurb", th: 88, power: "3.400 W", price: "279,38 €", cooling: "Luft", condition: "Refurb", manufacturer: "MicroBT" },
+  { model: "M70 220T", th: 220, power: "4.400 W", price: "4084,08 €", cooling: "Luft", condition: "Neu", manufacturer: "MicroBT" },
+  { model: "M63+ 400T", th: 400, power: "7.200 W", price: "5016,46 €", cooling: "Luft", condition: "Neu", manufacturer: "MicroBT" },
+  { model: "M61 200T", th: 200, power: "4.000 W", price: "2356,20 €", cooling: "Luft", condition: "Neu", manufacturer: "MicroBT" },
+  { model: "M61s+ 240T", th: 240, power: "4.012 W", price: "3444,54 €", cooling: "Luft", condition: "Neu", manufacturer: "MicroBT" },
+  { model: "M60s++ 230T", th: 230, power: "3.800 W", price: "3702,48 €", cooling: "Luft", condition: "Neu", manufacturer: "MicroBT" },
+  { model: "M63s+ 474T", th: 474, power: "8.000 W", price: "6672,53 €", cooling: "Luft", condition: "Neu", manufacturer: "MicroBT" },
+  { model: "Avalon Q90T", th: 90, power: "1.674 W", price: "1936,57 €", cooling: "Luft", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A16XP 300T", th: 300, power: "3.850 W", price: "6838,59 €", cooling: "Luft", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A15 Pro 221T", th: 221, power: "3.400 W", price: "3703,72 €", cooling: "Luft", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A15 200T", th: 200, power: "3.760 W", price: "2476,25 €", cooling: "Luft", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A14XP 150T", th: 150, power: "2.700 W", price: "1355,38 €", cooling: "Luft", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A1566HA 480T Hydro", th: 480, power: "8.064 W", price: "6867,76 €", cooling: "Hydro", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A1566HA 460T Hydro", th: 460, power: "8.200 W", price: "6209,39 €", cooling: "Hydro", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A1566eHA 400T Hydro", th: 400, power: "6.720 W", price: "3003,59 €", cooling: "Hydro", condition: "Neu", manufacturer: "Canaan" },
+  { model: "A1566I 260T Immersion", th: 260, power: "4.500 W", price: "4261,36 €", cooling: "Immersion", condition: "Neu", manufacturer: "Canaan" },
+  { model: "DG Home1 2.1G", th: 2.1, power: "630 W", price: "964,92 €", cooling: "Luft", condition: "Neu", manufacturer: "ElphaPex" },
+  { model: "DG1+ 13G", th: 13, power: "3.950 W", price: "2793,78 €", cooling: "Luft", condition: "Neu", manufacturer: "ElphaPex" }
+];
+
+function renderMinerTable() {
+  const container = document.getElementById('miner-table-container');
+  if (!container) return;
+  
+  // Sortierung: Zuerst S21 Pro, S21XP, S21+, S19K Pro, dann alphabetisch nach Modell
+  const sorted = [...miners].sort((a, b) => {
+    const order = ['S21 Pro', 'S21XP', 'S21+', 'S19K Pro'];
+    const aIndex = order.findIndex(o => a.model.includes(o));
+    const bIndex = order.findIndex(o => b.model.includes(o));
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    return a.model.localeCompare(b.model);
+  });
+
+  let html = `
+    <table>
+      <thead>
+        <tr>
+          <th>Modell</th>
+          <th>Hashrate</th>
+          <th>Stromverbrauch</th>
+          <th>Preis (exkl. Hosting)</th>
+          <th>Kühlung</th>
+          <th>Zustand</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+  sorted.forEach(m => {
+    const conditionClass = m.condition === 'Refurb' ? 'br' : 'bn';
+    html += `
+      <tr>
+        <td><strong>${m.model}</strong></td>
+        <td>${m.th} TH/s</td>
+        <td>${m.power}</td>
+        <td>${m.price}</td>
+        <td>${m.cooling}</td>
+        <td><span class="badge ${conditionClass}">${m.condition}</span></td>
+        <td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td>
+      </tr>
+    `;
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
 }
 
 // Initialisierung
