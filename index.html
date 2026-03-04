@@ -1,85 +1,855 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EU ASIC Miner Hosting - 0,08€/kWh</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 1rem 0; text-align: center; }
-        nav { background: #f4f4f4; padding: 1rem 0; text-align: center; }
-        nav a { color: #1e3c72; text-decoration: none; margin: 0 1rem; font-weight: bold; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%231e3c72" width="1000" height="600"/><circle fill="%232a5298" cx="200" cy="150" r="80"/><circle fill="%233355aa" cx="800" cy="400" r="120"/><rect fill="%234466bb" x="400" y="300" width="200" height="100"/></svg>'); background-size: cover; color: white; text-align: center; padding: 4rem 2rem; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
-        .btn { background: #ff6b35; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; transition: background 0.3s; }
-        .btn:hover { background: #e55a2b; }
-        section { padding: 3rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .features { background: #f8f9fa; }
-        .features ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; list-style: none; }
-        .features li { text-align: center; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .features h3 { color: #1e3c72; margin-bottom: 1rem; }
-        .contact { background: #1e3c72; color: white; text-align: center; }
-        footer { background: #333; color: white; text-align: center; padding: 1rem; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav a { display: block; margin: 0.5rem 0; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASIC Hosting EU – Professionelles Mining Hosting</title>
+<meta name="description" content="Professionelles ASIC Miner Hosting in der EU. Ab 0,065€/kWh, 24/7 Monitoring, Schnellstart. Antminer, Whatsminer, Avalon.">
+<style>
+:root{
+  --primary:#07111f;--primary2:#0d1e35;--accent:#2563eb;--accent2:#38bdf8;
+  --gold:#f59e0b;--green:#10b981;--light:#f0f4ff;--border:#e2e8f0;
+  --text:#1e293b;--muted:#64748b;--radius:14px;--shadow:0 8px 32px rgba(0,0,0,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#0d1e35;}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+
+/* TOPBAR */
+.topbar{background:linear-gradient(90deg,var(--accent),#0ea5e9);color:#fff;text-align:center;padding:0.5rem 1rem;font-size:0.82rem;}
+.topbar a{color:#bfdbfe;text-decoration:none;font-weight:600;cursor:pointer;}
+
+/* NAV */
+nav{background:rgba(7,17,31,0.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;
+  border-bottom:1px solid rgba(255,255,255,0.06);}
+.logo{color:#fff;font-size:1.3rem;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:0.6rem;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.logo span{color:var(--accent2);}
+.nav-links{display:flex;gap:0.2rem;list-style:none;align-items:center;}
+.nav-links a{color:#94a3b8;text-decoration:none;font-size:0.88rem;padding:0.45rem 0.85rem;
+  border-radius:7px;transition:all .2s;cursor:pointer;white-space:nowrap;}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.07);}
+.nav-cta{background:var(--accent)!important;color:#fff!important;font-weight:700!important;}
+.nav-cta:hover{background:#1d4ed8!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;}
+@media(max-width:950px){
+  .nav-links{display:none;flex-direction:column;position:fixed;top:68px;left:0;width:100%;
+    background:var(--primary);padding:1rem 5% 2rem;gap:0.3rem;border-bottom:1px solid rgba(255,255,255,0.08);z-index:999;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+}
+
+/* PAGE */
+.page{display:none;animation:fadeIn .3s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#07111f 0%,#0d1e35 50%,#071628 100%);
+  min-height:calc(100vh - 100px);display:flex;align-items:center;padding:5rem 5% 4rem;
+  position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;}
+.blob1{width:550px;height:550px;background:var(--accent);top:-100px;right:-80px;animation:fl1 9s ease-in-out infinite;}
+.blob2{width:380px;height:380px;background:var(--accent2);bottom:-80px;left:5%;animation:fl2 11s ease-in-out infinite;}
+@keyframes fl1{0%,100%{transform:translate(0,0)}50%{transform:translate(-25px,18px)}}
+@keyframes fl2{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-25px)}}
+.hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center;
+  max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(37,99,235,.2);
+  border:1px solid rgba(56,189,248,.3);color:var(--accent2);padding:.4rem 1rem;
+  border-radius:20px;font-size:.82rem;font-weight:600;margin-bottom:1.5rem;}
+.hero h1{font-size:clamp(2rem,4.5vw,3.4rem);color:#fff;font-weight:800;line-height:1.15;margin-bottom:1.2rem;}
+.hero h1 .hl{background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p{color:#94a3b8;font-size:1.05rem;line-height:1.75;margin-bottom:2rem;max-width:500px;}
+@media(max-width:900px){.hero p{margin:0 auto 2rem;}}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+@media(max-width:900px){.hero-btns{justify-content:center;}}
+.btn{padding:.82rem 1.7rem;border-radius:9px;font-weight:700;font-size:.93rem;cursor:pointer;
+  text-decoration:none;border:none;transition:all .22s;display:inline-flex;align-items:center;gap:.45rem;}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,.4);}
+.btn-primary:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,.5);}
+.btn-outline{background:transparent;color:var(--accent2);border:1.5px solid rgba(56,189,248,.5);}
+.btn-outline:hover{background:rgba(56,189,248,.1);transform:translateY(-2px);}
+.btn-white{background:#fff;color:var(--accent);font-weight:800;}
+.btn-white:hover{background:#f0f9ff;transform:translateY(-2px);}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.8rem;}
+.stat-c{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:1rem 1.2rem;}
+.stat-n{font-size:1.65rem;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-l{color:#64748b;font-size:.76rem;margin-top:.25rem;}
+
+/* HERO VISUAL */
+.hero-visual{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;padding:1.8rem;backdrop-filter:blur(10px);}
+.hv-label{color:#64748b;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;}
+.tier-row{border-radius:10px;padding:1rem 1.2rem;margin-bottom:.75rem;display:flex;align-items:center;justify-content:space-between;}
+.tier-row.t1{background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.2);}
+.tier-row.t2{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);}
+.tier-row.t3{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);}
+.tier-row.t4{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);}
+.tier-name{font-size:.82rem;color:#94a3b8;font-weight:600;}
+.tier-price{font-size:1.3rem;font-weight:800;}
+.t1 .tier-price{color:var(--accent2);}
+.t2 .tier-price{color:var(--green);}
+.t3 .tier-price{color:var(--gold);}
+.t4 .tier-price{color:#f87171;}
+
+/* TRUST BAR */
+.trust{background:#0d1e35;padding:1.8rem 5%;border-top:1px solid rgba(255,255,255,.05);}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:.6rem;color:#64748b;font-size:.83rem;}
+.ti span:first-child{font-size:1.2rem;}
+.ti strong{color:#94a3b8;}
+
+/* SECTION */
+section{padding:5rem 5%;}
+.section-alt{background:var(--light);}
+.section-dark{background:var(--primary);}
+.si{max-width:1200px;margin:0 auto;}
+.sh{text-align:center;margin-bottom:3.5rem;}
+.sh h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:800;color:var(--text);margin-bottom:.7rem;}
+.section-dark .sh h2{color:#fff;}
+.sh p{color:var(--muted);font-size:.97rem;max-width:560px;margin:0 auto;}
+.section-dark .sh p{color:#64748b;}
+.pill{display:inline-block;background:rgba(37,99,235,.1);color:var(--accent);
+  font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:.32rem .9rem;border-radius:20px;margin-bottom:.7rem;}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.card{background:#fff;border-radius:var(--radius);padding:1.9rem;border:1px solid var(--border);
+  transition:all .25s;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);
+  transition:transform .3s;transform-origin:left;}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(37,99,235,.2);}
+.card:hover::after{transform:scaleX(1);}
+.ci-box{width:50px;height:50px;background:var(--light);border-radius:11px;
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem;}
+.card h3{font-size:1.02rem;font-weight:700;color:var(--text);margin-bottom:.45rem;}
+.card p{color:var(--muted);font-size:.9rem;line-height:1.65;}
+
+/* PRICING TIERS */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.tier-card{background:#fff;border-radius:var(--radius);padding:2rem;border:2px solid var(--border);
+  text-align:center;position:relative;overflow:hidden;transition:all .25s;}
+.tier-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.tier-card.featured{border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,158,11,.12);}
+.tier-card.top{border-color:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.1);}
+.tc-badge{position:absolute;top:14px;right:-22px;font-size:.7rem;font-weight:800;
+  padding:.28rem 2rem;transform:rotate(35deg);width:130px;text-align:center;color:#fff;}
+.tc-badge.gold{background:var(--gold);}
+.tc-badge.red{background:#ef4444;}
+.tc-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  padding:.25rem .7rem;border-radius:20px;margin-bottom:.9rem;}
+.tc-tag.own{background:#e0f2fe;color:#0369a1;}
+.tc-tag.buy{background:#fef3c7;color:#92400e;}
+.tc-price{font-size:2.8rem;font-weight:800;line-height:1;}
+.tc-price.blue{color:var(--accent);}
+.tc-price.green{color:var(--green);}
+.tc-price.gold{color:var(--gold);}
+.tc-price.red{color:#ef4444;}
+.tc-unit{color:var(--muted);font-size:.82rem;margin-bottom:1.5rem;}
+.tc-min{background:var(--light);border-radius:7px;padding:.5rem .8rem;font-size:.8rem;
+  color:var(--muted);margin-bottom:1.2rem;font-weight:600;}
+.tc-features{list-style:none;text-align:left;margin-bottom:1.5rem;}
+.tc-features li{padding:.45rem 0;border-bottom:1px solid #f1f5f9;color:#475569;
+  font-size:.87rem;display:flex;align-items:center;gap:.5rem;}
+.tc-features li::before{content:"✓";color:var(--green);font-weight:800;font-size:.8rem;flex-shrink:0;}
+
+/* CALCULATOR */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:950px;margin:0 auto;align-items:start;}
+@media(max-width:720px){.calc-grid{grid-template-columns:1fr;}}
+.calc-form{background:#fff;border-radius:var(--radius);padding:2.5rem;border:1px solid var(--border);}
+.calc-form h3{font-weight:700;font-size:1.05rem;margin-bottom:1.5rem;}
+.fg{margin-bottom:1.2rem;}
+.fg label{display:block;font-weight:600;color:var(--text);margin-bottom:.42rem;font-size:.86rem;}
+.fg input,.fg select{width:100%;padding:.72rem 1rem;border:1.5px solid var(--border);
+  border-radius:8px;font-size:.93rem;transition:border .2s;background:#fff;color:var(--text);}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.calc-tip{background:var(--light);border-radius:9px;padding:.9rem 1rem;font-size:.82rem;color:var(--muted);line-height:1.65;margin-top:.5rem;}
+.calc-result{background:var(--primary);border-radius:var(--radius);padding:2.5rem;color:#fff;position:sticky;top:85px;}
+.cr-label{color:#475569;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.2rem;}
+.cr-tier-badge{border-radius:8px;padding:.55rem 1rem;font-size:.82rem;font-weight:700;margin-bottom:1.2rem;text-align:center;}
+.cr-rate{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.3rem;}
+.cr-rate-val{font-size:2.4rem;font-weight:800;color:var(--accent2);}
+.cr-rate-unit{color:#475569;font-size:.85rem;}
+hr.cr-div{border:none;border-top:1px solid rgba(255,255,255,.07);margin:1.2rem 0;}
+.cr-rows{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.5rem;}
+.cr-row{display:flex;justify-content:space-between;align-items:center;}
+.cr-row-l{color:#64748b;font-size:.86rem;}
+.cr-row-v{color:#fff;font-weight:700;}
+.cr-row-v.green{color:var(--green);}
+.cr-row-v.red{color:#f87171;}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:2rem;position:relative;}
+.steps::before{content:'';position:absolute;top:30px;left:13%;right:13%;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:0;}
+@media(max-width:680px){.steps::before{display:none;}}
+.step{text-align:center;z-index:1;position:relative;}
+.step-n{width:60px;height:60px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;font-weight:800;color:#fff;margin:0 auto 1.1rem;
+  box-shadow:0 0 0 6px #fff,0 0 0 8px rgba(37,99,235,.15);}
+.step h3{color:var(--text);font-size:.97rem;margin-bottom:.4rem;font-weight:700;}
+.step p{color:var(--muted);font-size:.86rem;line-height:1.6;}
+
+/* MINER TABLE */
+.tw{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:680px;}
+thead{background:var(--primary);}
+th{color:#94a3b8;padding:.9rem 1.1rem;text-align:left;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+td{padding:.9rem 1.1rem;border-bottom:1px solid #f1f5f9;font-size:.88rem;color:#475569;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#f8faff;}
+.badge{padding:.2rem .55rem;border-radius:4px;font-size:.73rem;font-weight:600;}
+.bn{background:#dbeafe;color:#1e40af;}
+.br{background:#fef3c7;color:#92400e;}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem;}
+.faq-item{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden;}
+.faq-q{padding:1.1rem 1.4rem;font-weight:600;color:var(--text);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;transition:background .2s;font-size:.95rem;}
+.faq-q:hover{background:#f8faff;}
+.faq-ico{width:26px;height:26px;background:var(--light);border-radius:50%;display:flex;
+  align-items:center;justify-content:center;color:var(--accent);font-size:.95rem;
+  flex-shrink:0;transition:all .3s;font-weight:700;}
+.faq-ico.open{background:var(--accent);color:#fff;transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-inner{padding:0 1.4rem 1.1rem;color:var(--muted);line-height:1.72;font-size:.9rem;}
+.faq-a.open{max-height:400px;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start;}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;}}
+.c-aside h3{font-size:1.35rem;font-weight:800;margin-bottom:.7rem;}
+.c-aside p{color:var(--muted);margin-bottom:2rem;line-height:1.7;font-size:.93rem;}
+.c-item{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.2rem;}
+.c-ico{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.c-item strong{display:block;color:var(--text);font-size:.87rem;margin-bottom:.1rem;}
+.c-item span{color:var(--muted);font-size:.85rem;}
+.c-form-card{background:#fff;border-radius:var(--radius);padding:2.5rem;border:1px solid var(--border);}
+.c-form-card h3{font-size:1.15rem;font-weight:700;margin-bottom:1.4rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
+.fg textarea{width:100%;padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:8px;
+  font-size:.93rem;resize:vertical;min-height:110px;font-family:inherit;transition:border .2s;color:var(--text);}
+.fg textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.btn-full{width:100%;}
+.success-msg{background:#d1fae5;border:1px solid #6ee7b7;color:#065f46;
+  padding:.9rem;border-radius:8px;text-align:center;font-weight:600;display:none;margin-top:.9rem;font-size:.88rem;}
+.form-note{color:var(--muted);font-size:.77rem;margin-top:.7rem;text-align:center;}
+
+/* CTA */
+.cta-wrap{background:linear-gradient(135deg,var(--accent) 0%,#0ea5e9 100%);padding:4rem 5%;text-align:center;}
+.cta-wrap h2{color:#fff;font-size:1.9rem;font-weight:800;margin-bottom:.8rem;}
+.cta-wrap p{color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:.97rem;}
+
+/* FOOTER */
+footer{background:var(--primary);color:#475569;padding:4rem 5% 1.5rem;}
+.fg-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem;max-width:1200px;margin-left:auto;margin-right:auto;}
+@media(max-width:700px){.fg-grid{grid-template-columns:1fr;gap:2rem;}}
+.fb-logo{color:#fff;font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:.5rem;margin-bottom:.7rem;}
+.fb p{font-size:.86rem;line-height:1.7;margin-top:.5rem;}
+.fc h4{color:#94a3b8;font-size:.74rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;}
+.fc ul{list-style:none;}
+.fc ul li{margin-bottom:.5rem;}
+.fc ul li a{color:#475569;text-decoration:none;font-size:.86rem;transition:color .2s;cursor:pointer;}
+.fc ul li a:hover{color:var(--accent2);}
+.fb-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);
+  padding-top:1.5rem;text-align:center;font-size:.8rem;}
+
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);
+  z-index:2000;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.overlay.open{display:flex;}
+.modal{background:#fff;border-radius:20px;padding:2.5rem;max-width:540px;width:92%;
+  position:relative;max-height:90vh;overflow-y:auto;animation:mIn .28s ease;}
+@keyframes mIn{from{opacity:0;transform:scale(.95)translateY(10px)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:.9rem;right:.9rem;background:#f1f5f9;border:none;
+  width:30px;height:30px;border-radius:50%;font-size:.95rem;cursor:pointer;color:#64748b;
+  display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.modal-close:hover{background:#e2e8f0;}
+.modal h2{font-size:1.35rem;font-weight:800;color:var(--text);margin-bottom:.4rem;}
+.modal>p{color:var(--muted);font-size:.88rem;margin-bottom:1.4rem;}
+.modal-hint{background:#d1fae5;border:1px solid #6ee7b7;color:#065f46;
+  padding:.65rem 1rem;border-radius:8px;font-size:.83rem;font-weight:600;display:none;margin-bottom:1rem;}
+</style>
 </head>
 <body>
-    <header>
-        <h1>EUASICHOSTING</h1>
-        <p>Professionelles Hosting für Ihre Mining-Hardware</p>
-    </header>
-    
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#features">Vorteile</a>
-        <a href="#hosting">Hosting</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
-    
-    <section id="home" class="hero">
-        <h1>EU ASIC Hosting ab 0,08€/kWh</h1>
-        <p>Ideal für Antminer, Whatsminer, Avalon & mehr. Kein Lärm, keine Hitze zu Hause – wir übernehmen alles!</p>
-        <a href="#contact" class="btn">Jetzt kontaktieren</a>
-    </section>
-    
-    <section id="features" class="features">
-        <h2>Unsere Vorteile</h2>
-        <ul>
-            <li>
-                <h3>Günstiger Strompreis</h3>
-                <p>0,08€ pro kWh mit transparenter Abrechnung nach Verbrauch.</p>
-            </li>
-            <li>
-                <h3>Professionelle Betreuung</h3>
-                <p>Rechenzentrumsbetrieb mit stabiler Infrastruktur und Kühlung. Inbetriebnahme, Überwachung & laufender Betrieb.</p>
-            </li>
-            <li>
-                <h3>Schneller Start</h3>
-                <p>Ca. 5 Tage Lieferzeit für jeden Miner. Geeignet für Einzelgeräte bis große Stückzahlen.</p>
-            </li>
-            <li>
-                <h3>Miner Kauf möglich</h3>
-                <p>Neue & gebrauchte Geräte wie Antminer S19/S21, Whatsminer, Avalon direkt über uns.</p>
-            </li>
-        </ul>
-    </section>
-    
-    <section id="hosting">
-        <h2>Kompatible Miner</h2>
-        <p>Unterstützt alle gängigen ASIC Miner: Antminer (z.B. S19, S21), Whatsminer, Avalon und weitere auf Anfrage.</p>
-        <p>Beispiele aus unserem Angebot: S21 HYD 338T, Whatsminer M63s 474T, Avalon A1566HA 460T.</p>
-    </section>
-    
-    <section id="contact" class="contact">
-        <h2>Kontaktieren Sie uns</h2>
-        <p>Bei Fragen einfach melden! EUASICHOSTING – Österreich, EU-weit.</p>
-        <a href="mailto:info@euasichosting.at" class="btn">E-Mail senden</a>
-    </section>
-    
-    <footer>
-        <p>&copy; 2026 EUASICHOSTING. Alle Rechte vorbehalten. | Österreich</p>
-    </footer>
+
+<div class="topbar">🇪🇺 EU-basiertes ASIC Mining Hosting · Österreich &nbsp;·&nbsp;
+  <a onclick="openOfferModal()" style="cursor:pointer">Jetzt unverbindliches Angebot anfragen →</a>
+</div>
+
+<nav>
+  <div class="logo" onclick="showPage('home')">
+    <div class="logo-icon">⛏️</div>
+    ASIC<span>Hosting</span>EU
+  </div>
+  <div class="hamburger" id="hbg" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="nl">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('services')">Leistungen</a></li>
+    <li><a onclick="showPage('pricing')">Preise & Rechner</a></li>
+    <li><a onclick="showPage('miner')">Miner kaufen</a></li>
+    <li><a onclick="showPage('faq')">FAQ</a></li>
+    <li><a onclick="showPage('contact')">Kontakt</a></li>
+    <li><a onclick="openOfferModal()" class="nav-cta">✉ Angebot anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- ══ PAGE: HOME ══ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-bg"><div class="blob blob1"></div><div class="blob blob2"></div></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">🇦🇹 ASIC Hosting EU · Österreich</div>
+        <h1>Mining ohne<br><span class="hl">Lärm, Hitze<br>& Aufwand.</span></h1>
+        <p>Ihre ASIC Miner laufen professionell, günstig und zuverlässig bei uns. Sie kassieren die Erträge – wir kümmern uns um alles andere.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="openOfferModal()">✉ Angebot erhalten</button>
+          <button class="btn btn-outline" onclick="showPage('pricing')">⚡ Kosten berechnen</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-c"><div class="stat-n">ab 0,065€</div><div class="stat-l">pro kWh (bestes Angebot)</div></div>
+          <div class="stat-c"><div class="stat-n">4 Tarife</div><div class="stat-l">für jeden Bedarf</div></div>
+          <div class="stat-c"><div class="stat-n">~5 Tage</div><div class="stat-l">bis zum Betrieb</div></div>
+          <div class="stat-c"><div class="stat-n">24/7</div><div class="stat-l">Monitoring & Betrieb</div></div>
+        </div>
+      </div>
+      <div class="hero-visual" id="hv">
+        <div class="hv-label">HOSTING TARIFE – ÜBERSICHT</div>
+        <div class="tier-row t1"><div><div class="tier-name">1 Gerät · eigener Miner · bis 6 Mon.</div><div style="color:#64748b;font-size:.74rem">Flexibel, kein Kauf nötig</div></div><div class="tier-price">0,085€<span style="font-size:.75rem;color:#64748b">/kWh</span></div></div>
+        <div class="tier-row t2"><div><div class="tier-name">1 Gerät · eigener Miner · ab 6 Mon.</div><div style="color:#64748b;font-size:.74rem">Günstig mit Laufzeitvorteil</div></div><div class="tier-price">0,080€<span style="font-size:.75rem;color:#64748b">/kWh</span></div></div>
+        <div class="tier-row t3"><div><div class="tier-name">5 Geräte · Kauf über uns · ab 6 Mon.</div><div style="color:#64748b;font-size:.74rem">Beste Kombination</div></div><div class="tier-price">0,075€<span style="font-size:.75rem;color:#64748b">/kWh</span></div></div>
+        <div class="tier-row t4"><div><div class="tier-name">10 Geräte · Kauf über uns · ab 6 Mon.</div><div style="color:#64748b;font-size:.74rem">Maximum Ersparnis</div></div><div class="tier-price">0,065€<span style="font-size:.75rem;color:#64748b">/kWh</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="trust-inner">
+      <div class="ti"><span>🔒</span><strong>Gesichertes Rechenzentrum</strong></div>
+      <div class="ti"><span>⚡</span><strong>Stabile Infrastruktur</strong></div>
+      <div class="ti"><span>🌡️</span><strong>Professionelle Kühlung</strong></div>
+      <div class="ti"><span>📊</span><strong>Transparente Abrechnung</strong></div>
+      <div class="ti"><span>🇪🇺</span><strong>EU-Betrieb · Österreich</strong></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="si reveal">
+      <div class="sh"><div class="pill">VORTEILE</div><h2>Warum ASIC Hosting EU?</h2><p>Kein Lärm zuhause, kein überhöhter Strom, kein Aufwand – professionelles Mining für jeden.</p></div>
+      <div class="cards">
+        <div class="card"><div class="ci-box">⚡</div><h3>Günstige Strompreise</h3><p>Ab 0,065€/kWh je nach Tarif – transparente Abrechnung nach tatsächlichem Verbrauch, keine versteckten Kosten.</p></div>
+        <div class="card"><div class="ci-box">🏭</div><h3>Rechenzentrum-Betrieb</h3><p>Professionelle Infrastruktur mit stabiler Stromversorgung, Kühlung (Luft, Hydro, Immersion) und physischer Sicherheit.</p></div>
+        <div class="card"><div class="ci-box">🔧</div><h3>Rundum-Service</h3><p>Von der Einrichtung bis zur laufenden Überwachung – wir kümmern uns um alles. Sie erhalten die Mining-Erträge.</p></div>
+        <div class="card"><div class="ci-box">🚀</div><h3>Schnellstart ~5 Tage</h3><p>Nach Erhalt Ihres Miners ist er in ca. 5 Tagen vollständig eingerichtet und mining-bereit.</p></div>
+        <div class="card"><div class="ci-box">📦</div><h3>Miner-Zukauf möglich</h3><p>Wir vermitteln neue & gebrauchte Antminer, Whatsminer, Avalon – direkt mit günstigerem Hosting-Tarif kombinierbar.</p></div>
+        <div class="card"><div class="ci-box">📈</div><h3>Flexibel skalierbar</h3><p>1 Gerät oder 10+ – ob Einsteiger oder erfahrener Miner, wir passen uns Ihrem Bedarf an.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="si reveal">
+      <div class="sh"><div class="pill">SO GEHT'S</div><h2>In 4 Schritten zum Mining</h2></div>
+      <div class="steps">
+        <div class="step"><div class="step-n">1</div><h3>Angebot anfragen</h3><p>Füllen Sie das Formular aus oder kontaktieren Sie uns direkt.</p></div>
+        <div class="step"><div class="step-n">2</div><h3>Angebot erhalten</h3><p>Wir erstellen ein individuelles Angebot passend zu Ihrem Bedarf.</p></div>
+        <div class="step"><div class="step-n">3</div><h3>Miner einsenden</h3><p>Sie schicken Ihren Miner ein – wir richten alles professionell ein.</p></div>
+        <div class="step"><div class="step-n">4</div><h3>Erträge einsammeln</h3><p>Ihr Miner läuft – Sie überwachen Ihre Mining-Erträge in Ruhe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-wrap reveal">
+    <h2>Bereit, professionell zu minen?</h2>
+    <p>Kostenloses, unverbindliches Angebot – schnell & unkompliziert.</p>
+    <button class="btn btn-white" onclick="openOfferModal()">Kostenloses Angebot anfragen →</button>
+  </div>
+</div>
+
+<!-- ══ PAGE: SERVICES ══ -->
+<div class="page" id="page-services">
+  <section style="padding-top:4rem;">
+    <div class="si">
+      <div class="sh reveal"><div class="pill">LEISTUNGEN</div><h2>Unser komplettes Angebot</h2><p>Alles für professionelles Mining – aus einer Hand.</p></div>
+      <div class="cards reveal">
+        <div class="card"><div class="ci-box">🏢</div><h3>Professionelles Hosting</h3><p>Ihre Hardware läuft im Rechenzentrum: stabile Infrastruktur, unterbrechungsfreie Stromversorgung, optimale Kühlung.</p></div>
+        <div class="card"><div class="ci-box">❄️</div><h3>Alle Kühltypen</h3><p>Luftkühlung (Standard), Immersion Cooling und Hydro Cooling für Hochleistungsgeräte – alles unterstützt.</p></div>
+        <div class="card"><div class="ci-box">🔌</div><h3>Inbetriebnahme</h3><p>Komplette Ersteinrichtung inklusive Pool-Konfiguration, Anschließen und Testen Ihres Miners.</p></div>
+        <div class="card"><div class="ci-box">📡</div><h3>24/7 Monitoring</h3><p>Rund-um-die-Uhr Überwachung aller Geräte. Bei Problemen reagieren wir sofort und informieren Sie.</p></div>
+        <div class="card"><div class="ci-box">🛠️</div><h3>Wartung & Support</h3><p>Laufende Wartung, Firmware-Updates und technischer Support sind im Hosting inklusive.</p></div>
+        <div class="card"><div class="ci-box">🔒</div><h3>Physische Sicherheit</h3><p>Zutrittskontrolle, Videoüberwachung und gesichertes Gebäude schützen Ihre Hardware rund um die Uhr.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-alt">
+    <div class="si reveal">
+      <div class="sh"><div class="pill">KOMPATIBILITÄT</div><h2>Unterstützte Miner</h2><p>Alle gängigen ASIC Modelle willkommen. Nicht dabei? Einfach anfragen!</p></div>
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S19</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21 HYD</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Antminer S21 XP</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Whatsminer M30S</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Whatsminer M60S</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Whatsminer M63S</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#dbeafe;color:#1e40af">Avalon A14/A15/A16</span>
+        <span style="display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;margin:.25rem;background:#d1fae5;color:#065f46">+ Weitere auf Anfrage</span>
+      </div>
+      <div style="text-align:center;"><button class="btn btn-primary" onclick="showPage('miner')">Alle Miner ansehen →</button></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE: PRICING ══ -->
+<div class="page" id="page-pricing">
+  <section style="padding-top:4rem;">
+    <div class="si">
+      <div class="sh reveal"><div class="pill">TARIFE</div><h2>Unsere 4 Hosting-Tarife</h2><p>Für jeden Bedarf der passende Tarif – transparent und fair abgerechnet.</p></div>
+      <div class="tiers reveal">
+
+        <!-- TIER 1 -->
+        <div class="tier-card">
+          <div class="tc-tag own">Eigener Miner</div>
+          <div class="tc-price blue">0,085€</div>
+          <div class="tc-unit">pro kWh Verbrauch</div>
+          <div class="tc-min">⏱ Mindestlaufzeit: 1–6 Monate</div>
+          <ul class="tc-features">
+            <li>1 eigenes Gerät</li>
+            <li>Flexible Laufzeit</li>
+            <li>24/7 Monitoring</li>
+            <li>Inbetriebnahme inkl.</li>
+            <li>Professionelle Kühlung</li>
+          </ul>
+          <button class="btn btn-outline btn-full" onclick="openOfferModal()">Angebot anfragen</button>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="tier-card">
+          <div class="tc-tag own">Eigener Miner</div>
+          <div class="tc-price green">0,080€</div>
+          <div class="tc-unit">pro kWh Verbrauch</div>
+          <div class="tc-min">⏱ Mindestlaufzeit: 6 Monate</div>
+          <ul class="tc-features">
+            <li>1 eigenes Gerät</li>
+            <li>Mindestens 6 Monate Laufzeit</li>
+            <li>24/7 Monitoring</li>
+            <li>Inbetriebnahme inkl.</li>
+            <li>Professionelle Kühlung</li>
+          </ul>
+          <button class="btn btn-outline btn-full" onclick="openOfferModal()">Angebot anfragen</button>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-card featured">
+          <div class="tc-badge gold">EMPFOHLEN</div>
+          <div class="tc-tag buy">Kauf über uns</div>
+          <div class="tc-price gold">0,075€</div>
+          <div class="tc-unit">pro kWh Verbrauch</div>
+          <div class="tc-min">⏱ 5 Geräte · Mind. 6 Monate</div>
+          <ul class="tc-features">
+            <li>5 Geräte – Kauf über uns</li>
+            <li>Mindestens 6 Monate Laufzeit</li>
+            <li>24/7 Priority Monitoring</li>
+            <li>Inbetriebnahme inkl.</li>
+            <li>Professionelle Kühlung</li>
+            <li>Dedizierter Ansprechpartner</li>
+          </ul>
+          <button class="btn btn-primary btn-full" onclick="openOfferModal()">Angebot anfragen</button>
+        </div>
+
+        <!-- TIER 4 -->
+        <div class="tier-card top">
+          <div class="tc-badge red">MAX RABATT</div>
+          <div class="tc-tag buy">Kauf über uns</div>
+          <div class="tc-price red">0,065€</div>
+          <div class="tc-unit">pro kWh Verbrauch</div>
+          <div class="tc-min">⏱ 10 Geräte · Mind. 6 Monate</div>
+          <ul class="tc-features">
+            <li>10 Geräte – Kauf über uns</li>
+            <li>Mindestens 6 Monate Laufzeit</li>
+            <li>24/7 Priority Monitoring</li>
+            <li>Inbetriebnahme inkl.</li>
+            <li>Professionelle Kühlung</li>
+            <li>Dedizierter Ansprechpartner</li>
+            <li>23,5% günstiger als Tarif 1!</li>
+          </ul>
+          <button class="btn btn-primary btn-full" onclick="openOfferModal()">Angebot anfragen</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section-alt">
+    <div class="si">
+      <div class="sh reveal"><div class="pill">KOSTENRECHNER</div><h2>Hosting-Kosten berechnen</h2><p>Wählen Sie Tarif, Modell und Laufzeit – der günstigste passende Tarif wird automatisch angezeigt.</p></div>
+      <div class="calc-grid reveal">
+        <div class="calc-form">
+          <h3>⚙️ Ihre Daten eingeben</h3>
+          <div class="fg">
+            <label>Geräte-Quelle</label>
+            <select id="cSrc" onchange="calcCost()">
+              <option value="own">Eigenes Gerät (bereits vorhanden)</option>
+              <option value="buy">Kauf über uns (Miner von uns beziehen)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Anzahl der Miner</label>
+            <input type="number" id="cMiners" value="1" min="1" max="999" oninput="calcCost()">
+          </div>
+          <div class="fg">
+            <label>Miner-Modell / Leistungsaufnahme</label>
+            <select id="cModel" onchange="calcModelChange()">
+              <option value="3250">Antminer S19 Pro – 3.250W</option>
+              <option value="3500" selected>Antminer S21 – 3.500W</option>
+              <option value="5360">Antminer S21 HYD – 5.360W</option>
+              <option value="5500">Antminer S21 XP HYD – 5.500W</option>
+              <option value="3276">Whatsminer M60S – 3.276W</option>
+              <option value="6728">Whatsminer M63S – 6.728W</option>
+              <option value="3400">Avalon A15 Pro – 3.400W</option>
+              <option value="0">Benutzerdefiniert</option>
+            </select>
+          </div>
+          <div class="fg" id="cwWrap" style="display:none">
+            <label>Eigene Leistungsaufnahme (Watt)</label>
+            <input type="number" id="cWatt" value="3500" min="100" oninput="calcCost()">
+          </div>
+          <div class="fg">
+            <label>Vertragslaufzeit</label>
+            <select id="cDur" onchange="calcCost()">
+              <option value="1">1 Monat</option>
+              <option value="2">2 Monate</option>
+              <option value="3">3 Monate</option>
+              <option value="6">6 Monate</option>
+              <option value="12">12 Monate</option>
+              <option value="24">24 Monate</option>
+            </select>
+          </div>
+          <div class="calc-tip" id="calcTip">💡 Tipp: Kaufen Sie 5 oder 10 Geräte über uns und sichern Sie sich bis zu 23,5% günstigen Strom.</div>
+        </div>
+        <div class="calc-result">
+          <div class="cr-label">ERGEBNIS</div>
+          <div class="cr-tier-badge" id="crBadge"></div>
+          <div class="cr-rate"><span class="cr-rate-val" id="crVal">0,085€</span><span class="cr-rate-unit">/kWh</span></div>
+          <hr class="cr-div">
+          <div class="cr-rows" id="crRows"></div>
+          <button class="btn btn-primary btn-full" onclick="openOfferModal()">Jetzt Angebot anfragen →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE: MINER ══ -->
+<div class="page" id="page-miner">
+  <section style="padding-top:4rem;">
+    <div class="si">
+      <div class="sh reveal"><div class="pill">MINER KAUFEN</div><h2>Neue & gebrauchte Miner</h2><p>Noch keinen Miner? Wir vermitteln EU-weit – direkt mit günstigerem Hosting-Tarif kombinierbar.</p></div>
+      <div class="tw reveal">
+        <table>
+          <thead><tr><th>Modell</th><th>Hashrate</th><th>Leistung</th><th>Kühlung</th><th>Lieferzeit</th><th>Zustand</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><strong>Antminer S21</strong></td><td>235 TH/s</td><td>3.500W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Antminer S21 HYD</strong></td><td>335 TH/s</td><td>5.360W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Antminer S21 XP HYD</strong></td><td>473 TH/s</td><td>5.500W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Antminer S19K Pro</strong></td><td>120 TH/s</td><td>2.760W</td><td>Luft</td><td>24 Std.</td><td><span class="badge br">Refurb</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Whatsminer M60S</strong></td><td>230 TH/s</td><td>3.276W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Whatsminer M63S</strong></td><td>474 TH/s</td><td>6.728W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Avalon A15 Pro</strong></td><td>221 TH/s</td><td>3.400W</td><td>Luft</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+            <tr><td><strong>Avalon A1566 HYD</strong></td><td>460 TH/s</td><td>6.900W</td><td>Hydro</td><td>~5 Tage</td><td><span class="badge bn">Neu</span></td><td><button class="btn btn-primary" style="padding:.38rem .9rem;font-size:.8rem" onclick="openOfferModal()">Anfragen</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center;color:var(--muted);margin-top:1.2rem;font-size:.85rem;">⚠️ Miner-Kauf über uns → automatisch günstigerer Hosting-Tarif (0,075€ oder 0,065€/kWh)!</p>
+      <div style="text-align:center;margin-top:1.3rem;"><button class="btn btn-primary" onclick="openOfferModal()">Modell & Preis anfragen</button></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE: FAQ ══ -->
+<div class="page" id="page-faq">
+  <section style="padding-top:4rem;">
+    <div class="si">
+      <div class="sh reveal"><div class="pill">FAQ</div><h2>Häufige Fragen</h2><p>Antworten auf die wichtigsten Fragen zu unserem Hosting.</p></div>
+      <div class="faq-list reveal">
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Was kostet das Hosting genau?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Wir bieten 4 Tarife: 0,085€/kWh (1 eigenes Gerät, bis 6 Mon.), 0,080€/kWh (1 eigenes Gerät, ab 6 Mon.), 0,075€/kWh (5 Geräte über uns, ab 6 Mon.) und 0,065€/kWh (10 Geräte über uns, ab 6 Mon.). Abgerechnet wird nach tatsächlichem Stromverbrauch – keine versteckten Kosten.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Was bedeutet „Kauf über uns"?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Wir vermitteln ASIC Miner (Antminer, Whatsminer, Avalon) von europäischen Lieferanten. Wenn Sie Ihre Miner über uns kaufen statt selbst zu beschaffen, erhalten Sie automatisch einen günstigeren Hosting-Tarif. Die Lieferung erfolgt direkt ins Rechenzentrum.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie wird abgerechnet?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Monatlich nach tatsächlichem Stromverbrauch in kWh. Sie zahlen nur den Strom, den Ihre Miner wirklich verbrauchen – keine Pauschalgebühren, volle Transparenz.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie lange dauert die Inbetriebnahme?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Nach Erhalt Ihres Miners richten wir ihn innerhalb von ca. 5 Tagen vollständig ein. Bei einigen Modellen ist ein Start innerhalb von 24 Stunden möglich.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Gibt es eine Mindestlaufzeit?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Für Tarif 1 (0,085€/kWh) gibt es keine feste Mindestlaufzeit ab 1 Monat. Für die günstigeren Tarife (0,080€, 0,075€, 0,065€) gilt eine Mindestlaufzeit von 6 Monaten.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Welche Miner werden unterstützt?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Alle gängigen ASIC Modelle: Antminer S19/S21/S21 HYD/S21 XP HYD, Whatsminer M30S/M60S/M63S, Avalon A14/A15/A16/A1566 HYD und viele mehr. Auch Hydro- und Immersion-Miner sind willkommen.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie sicher ist meine Hardware?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Das Rechenzentrum ist physisch gesichert mit Zutrittskontrolle und Videoüberwachung. Details zu Haftung und Versicherung klären wir im individuellen Vertrag.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="tfaq(this)">Wie nehme ich Kontakt auf?<div class="faq-ico">+</div></div><div class="faq-a"><div class="faq-a-inner">Einfach das Kontaktformular auf der Kontaktseite ausfüllen oder direkt auf „Angebot anfragen" klicken. Wir antworten in der Regel innerhalb von 24 Stunden unter euasichosting@energy-bit.at.</div></div></div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;"><button class="btn btn-primary" onclick="showPage('contact')">Weitere Fragen? Kontakt aufnehmen →</button></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PAGE: CONTACT ══ -->
+<div class="page" id="page-contact">
+  <section style="padding-top:4rem;">
+    <div class="si">
+      <div class="sh reveal"><div class="pill">KONTAKT</div><h2>Schreiben Sie uns</h2><p>Wir antworten in der Regel innerhalb von 24 Stunden.</p></div>
+      <div class="contact-grid reveal">
+        <div class="c-aside">
+          <h3>ASIC Hosting EU</h3>
+          <p>Professionelles ASIC Miner Hosting in Österreich / EU. Ob Einsteiger oder Profi – wir haben den passenden Tarif.</p>
+          <div class="c-item"><div class="c-ico">✉️</div><div><strong>E-Mail</strong><span>euasichosting@energy-bit.at</span></div></div>
+          <div class="c-item"><div class="c-ico">⏰</div><div><strong>Antwortzeit</strong><span>In der Regel innerhalb 24h</span></div></div>
+          <div class="c-item"><div class="c-ico">🇦🇹</div><div><strong>Standort</strong><span>Österreich / Europäische Union</span></div></div>
+          <div style="background:var(--light);border-radius:12px;padding:1.5rem;margin-top:1.5rem;">
+            <div style="font-weight:700;margin-bottom:.5rem;">📋 Tarif-Erinnerung</div>
+            <div style="font-size:.84rem;color:var(--muted);line-height:1.7;">
+              • <b>0,085€/kWh</b> – 1 eigener Miner, 1–6 Monate<br>
+              • <b>0,080€/kWh</b> – 1 eigener Miner, ab 6 Monate<br>
+              • <b>0,075€/kWh</b> – 5 Geräte über uns, ab 6 Monate<br>
+              • <b>0,065€/kWh</b> – 10 Geräte über uns, ab 6 Monate
+            </div>
+            <button class="btn btn-primary" style="margin-top:1rem;width:100%" onclick="openOfferModal()">Angebot anfragen</button>
+          </div>
+        </div>
+        <div class="c-form-card">
+          <h3>📩 Nachricht senden</h3>
+          <form id="cForm">
+            <div class="form-row">
+              <div class="fg"><label>Vorname *</label><input type="text" id="cfFn" placeholder="Max" required></div>
+              <div class="fg"><label>Nachname *</label><input type="text" id="cfLn" placeholder="Mustermann" required></div>
+            </div>
+            <div class="fg"><label>E-Mail *</label><input type="email" id="cfEm" placeholder="ihre@email.com" required></div>
+            <div class="fg"><label>Telefon / WhatsApp</label><input type="tel" id="cfTel" placeholder="+43 ..."></div>
+            <div class="form-row">
+              <div class="fg"><label>Anzahl Miner</label><input type="number" id="cfMn" placeholder="z.B. 5" min="1"></div>
+              <div class="fg"><label>Miner-Modell</label><input type="text" id="cfMod" placeholder="z.B. S21"></div>
+            </div>
+            <div class="fg"><label>Nachricht *</label><textarea id="cfMsg" placeholder="Ihr Anliegen, Fragen, gewünschte Laufzeit..." required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full">Nachricht senden →</button>
+            <div class="form-note">Öffnet Ihren Mail-Client vorausgefüllt an euasichosting@energy-bit.at</div>
+            <div class="success-msg" id="cfOk">✅ Mail-Client geöffnet! Bitte die E-Mail absenden. Wir melden uns bald.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg-grid">
+    <div class="fb">
+      <div class="fb-logo"><div class="logo-icon">⛏️</div>ASIC<span style="color:var(--accent2)">Hosting</span>EU</div>
+      <p>Professionelles ASIC Miner Hosting in Österreich. Günstig, transparent, zuverlässig – 4 Tarife für jeden Bedarf.</p>
+    </div>
+    <div class="fc">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('services')">Leistungen</a></li>
+        <li><a onclick="showPage('pricing')">Preise & Rechner</a></li>
+        <li><a onclick="showPage('miner')">Miner kaufen</a></li>
+        <li><a onclick="showPage('faq')">FAQ</a></li>
+        <li><a onclick="showPage('contact')">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a>euasichosting@energy-bit.at</a></li>
+        <li><a onclick="openOfferModal()">Angebot anfragen</a></li>
+        <li><a onclick="showPage('pricing')">Kostenrechner</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bottom">&copy; 2026 ASIC Hosting EU · Österreich · Alle Rechte vorbehalten</div>
+</footer>
+
+<!-- OFFER MODAL -->
+<div class="overlay" id="ofOvl">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOffer()">✕</button>
+    <h2>🚀 Angebot anfragen</h2>
+    <p>Kostenloses, unverbindliches Angebot – Antwort innerhalb von 24h.</p>
+    <div class="modal-hint" id="mHint"></div>
+    <form id="ofForm">
+      <div class="form-row">
+        <div class="fg"><label>Vorname *</label><input type="text" id="ofFn" placeholder="Max" required></div>
+        <div class="fg"><label>Nachname *</label><input type="text" id="ofLn" placeholder="Mustermann" required></div>
+      </div>
+      <div class="fg"><label>E-Mail *</label><input type="email" id="ofEm" placeholder="ihre@email.com" required></div>
+      <div class="fg">
+        <label>Geräte-Quelle</label>
+        <select id="ofSrc" onchange="checkHint()">
+          <option value="own">Eigenes Gerät (bereits vorhanden)</option>
+          <option value="buy">Kauf über uns</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>Anzahl Miner *</label><input type="number" id="ofMn" placeholder="z.B. 5" min="1" required oninput="checkHint()"></div>
+        <div class="fg"><label>Laufzeit</label>
+          <select id="ofDur" onchange="checkHint()">
+            <option value="1">1 Monat</option><option value="2">2 Monate</option>
+            <option value="3">3 Monate</option><option value="6">6 Monate</option>
+            <option value="12">12 Monate</option><option value="24">24 Monate</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Miner-Modell(e)</label><input type="text" id="ofMod" placeholder="z.B. Antminer S21, Whatsminer M60S"></div>
+      <div class="fg"><label>Nachricht</label><textarea id="ofMsg" placeholder="Fragen, weitere Infos..."></textarea></div>
+      <button type="submit" class="btn btn-primary btn-full">Angebot anfordern →</button>
+      <div class="form-note">Öffnet Ihren Mail-Client an euasichosting@energy-bit.at</div>
+      <div class="success-msg" id="ofOk">✅ Mail-Client geöffnet! Bitte absenden. Wir melden uns bald.</div>
+    </form>
+  </div>
+</div>
+
+<script>
+// ── NAVIGATION ──
+function showPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('nl').classList.remove('open');
+  if(n==='pricing') setTimeout(calcCost,80);
+  setTimeout(initReveal,60);
+}
+function toggleMenu(){document.getElementById('nl').classList.toggle('open');}
+
+// ── REVEAL ──
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+}),{threshold:.1});
+function initReveal(){
+  document.querySelectorAll('.page.active .reveal').forEach(el=>{
+    if(!el.classList.contains('visible')) obs.observe(el);
+  });
+}
+setTimeout(initReveal,150);
+
+// ── HERO VISUAL ──
+function hvCheck(){document.getElementById('hv').style.display=window.innerWidth>900?'block':'none';}
+hvCheck(); window.addEventListener('resize',hvCheck);
+
+// ── TARIFF LOGIC ──
+function getTariff(src, miners, months) {
+  if(src==='buy'){
+    if(miners>=10 && months>=6) return {rate:0.065, label:'Tarif 4: 10 Geräte · Kauf über uns · ab 6 Mon.', color:'#ef4444'};
+    if(miners>=5  && months>=6) return {rate:0.075, label:'Tarif 3: 5 Geräte · Kauf über uns · ab 6 Mon.', color:'#f59e0b'};
+  }
+  if(months>=6) return {rate:0.080, label:'Tarif 2: Eigenes Gerät · ab 6 Monate', color:'#10b981'};
+  return {rate:0.085, label:'Tarif 1: Eigenes Gerät · 1–6 Monate', color:'#38bdf8'};
+}
+
+// ── CALCULATOR ──
+function calcModelChange(){
+  document.getElementById('cwWrap').style.display=document.getElementById('cModel').value==='0'?'block':'none';
+  calcCost();
+}
+function calcCost(){
+  const src=document.getElementById('cSrc').value;
+  const miners=Math.max(1,parseInt(document.getElementById('cMiners').value)||1);
+  const months=parseInt(document.getElementById('cDur').value)||1;
+  const mv=document.getElementById('cModel').value;
+  const watts=mv==='0'?(parseInt(document.getElementById('cWatt').value)||3500):parseInt(mv);
+  const t=getTariff(src,miners,months);
+  const kwhM=(watts/1000)*24*30*miners;
+  const costM=kwhM*t.rate;
+  const costT=costM*months;
+  const worstT=kwhM*0.085*months;
+  const savings=worstT-costT;
+  document.getElementById('crVal').textContent=t.rate.toFixed(3).replace('.',',')+'€';
+  const b=document.getElementById('crBadge');
+  b.style.background=t.color+'22';b.style.border='1px solid '+t.color+'44';b.style.color=t.color;
+  b.textContent='✓ '+t.label;
+  // tip
+  const tip=document.getElementById('calcTip');
+  if(src==='buy'&&miners>=10&&months>=6) tip.textContent='🏆 Maximaler Rabatt aktiv! Sie sparen '+savings.toFixed(2).replace('.',',')+'€ gegenüber Tarif 1.';
+  else if(src==='buy'&&miners>=5&&months>=6) tip.textContent='🌟 Tarif 3 aktiv! Mit 10 Geräten über uns sparen Sie noch mehr.';
+  else if(months>=6) tip.textContent='💡 Kaufen Sie 5 oder 10 Geräte über uns und sparen Sie bis zu 23,5% auf den Strompreis!';
+  else tip.textContent='💡 Wählen Sie 6+ Monate Laufzeit für günstigere Tarife.';
+  document.getElementById('crRows').innerHTML=`
+    <div class="cr-row"><span class="cr-row-l">Verbrauch / Monat</span><span class="cr-row-v">${Math.round(kwhM).toLocaleString('de')} kWh</span></div>
+    <div class="cr-row"><span class="cr-row-l">Kosten / Monat</span><span class="cr-row-v">${costM.toFixed(2).replace('.',',')} €</span></div>
+    <div class="cr-row"><span class="cr-row-l">Gesamtkosten (${months} Mon.)</span><span class="cr-row-v">${costT.toFixed(2).replace('.',',')} €</span></div>
+    ${savings>0.01?'<div class="cr-row"><span class="cr-row-l">Ersparnis ggü. Tarif 1</span><span class="cr-row-v green">'+savings.toFixed(2).replace('.',',')+'€</span></div>':''}
+  `;
+}
+
+// ── FAQ ──
+function tfaq(el){
+  const a=el.nextElementSibling,ic=el.querySelector('.faq-ico'),op=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-ico').forEach(x=>x.classList.remove('open'));
+  if(!op){a.classList.add('open');ic.classList.add('open');}
+}
+
+// ── MODAL ──
+function openOfferModal(){document.getElementById('ofOvl').classList.add('open');document.body.style.overflow='hidden';}
+function closeOffer(){document.getElementById('ofOvl').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('ofOvl').addEventListener('click',function(e){if(e.target===this)closeOffer();});
+function checkHint(){
+  const src=document.getElementById('ofSrc').value;
+  const mn=parseInt(document.getElementById('ofMn').value)||0;
+  const dur=parseInt(document.getElementById('ofDur').value)||0;
+  const t=getTariff(src,mn,dur);
+  const h=document.getElementById('mHint');
+  h.style.display=mn>0?'block':'none';
+  h.style.background=t.color+'18';h.style.border='1px solid '+t.color+'44';h.style.color=t.color;
+  h.textContent='✓ Ihr Tarif: '+t.label+' → '+t.rate.toFixed(3).replace('.',',')+' €/kWh';
+}
+
+// ── MAILTO ──
+const EMAIL='euasichosting@energy-bit.at';
+function buildMailto(subj,fields){
+  const body=Object.entries(fields).filter(([k,v])=>v).map(([k,v])=>k+': '+v).join('
+');
+  return 'mailto:'+EMAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+}
+document.getElementById('cForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  window.location.href=buildMailto('Kontaktanfrage – ASIC Hosting EU',{
+    'Name':document.getElementById('cfFn').value+' '+document.getElementById('cfLn').value,
+    'E-Mail':document.getElementById('cfEm').value,'Telefon':document.getElementById('cfTel').value,
+    'Anzahl Miner':document.getElementById('cfMn').value,'Miner-Modell':document.getElementById('cfMod').value,
+    'Nachricht':'
+'+document.getElementById('cfMsg').value
+  });
+  document.getElementById('cfOk').style.display='block';
+});
+document.getElementById('ofForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const src=document.getElementById('ofSrc').value==='own'?'Eigenes Gerät':'Kauf über uns';
+  window.location.href=buildMailto('Angebotsanfrage – ASIC Hosting EU',{
+    'Name':document.getElementById('ofFn').value+' '+document.getElementById('ofLn').value,
+    'E-Mail':document.getElementById('ofEm').value,'Geräte-Quelle':src,
+    'Anzahl Miner':document.getElementById('ofMn').value,
+    'Laufzeit':document.getElementById('ofDur').value+' Monate',
+    'Miner-Modell':document.getElementById('ofMod').value,
+    'Nachricht':'
+'+document.getElementById('ofMsg').value
+  });
+  document.getElementById('ofOk').style.display='block';
+});
+calcCost();
+</script>
 </body>
 </html>
