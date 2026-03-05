@@ -189,7 +189,7 @@ footer{background:var(--primary);color:#a0b8cc;padding:3rem 5% 1.5rem;}
 
 /* Neue Footer-Zeile für Impressum, AGB, Datenschutz */
 .footer-legal{margin-top:1rem;text-align:center;font-size:.75rem;color:#a0b8cc;}
-.footer-legal a{color:#a0b8cc;text-decoration:underline;margin:0 0.5rem;}
+.footer-legal a{color:#a0b8cc;text-decoration:underline;margin:0 0.5rem;cursor:pointer;}
 .footer-legal a:hover{color:white;}
 .footer-service{text-align:center;font-size:.8rem;color:#a0b8cc;margin-top:0.5rem;}
 
@@ -210,9 +210,6 @@ footer{background:var(--primary);color:#a0b8cc;padding:3rem 5% 1.5rem;}
   background: var(--accent);
   color: white;
 }
-
-
-
 
 </style>
 </head>
@@ -434,35 +431,55 @@ footer{background:var(--primary);color:#a0b8cc;padding:3rem 5% 1.5rem;}
     <div>© 2026 EU Asic Hosting · Alle Rechte vorbehalten</div>
     <div class="footer-service">EUASIC Hosting ist ein Service von <a href="https://energy-bit.at" target="_blank">Energy-Bit e.U.</a> – Verträge und Dienstleistungen werden über energy-bit.at abgewickelt.</div>
     <div class="footer-legal">
-      <p>Impressum
-
-Angaben gemäß §5 ECG und §24 Mediengesetz
-
-Energy Bit
-Achleitner Alexander
-Oberau 11
-4761 Enzenkirchen
-Österreich
-
-E-Mail: office@energy-bit.at
-Webseite: https://energy-bit.at
-
-EUASIC Hosting ist ein Service der Website energy-bit.at</p>
-
-        <p>Für alle Dienstleistungen gelten die AGB der Website: https://energy-bit.at/policies/terms-of-service</p>
-        <p>Datenschutzerklärung
-
-Die Datenschutzerklärung gilt gemäß der Hauptwebsite:
-
-https://energy-bit.at/policies/privacy-policy</p>
-      <a href="https://energy-bit.at/policies/legal-notice" target="_blank">Impressum</a> |
-      <a href="https://energy-bit.at/policies/terms-of-service" target="_blank">AGB</a> |
-      <a href="https://energy-bit.at/policies/privacy-policy" target="_blank">Datenschutz</a>
+      <a onclick="openOverlay('impressum')">Impressum</a> |
+      <a onclick="openOverlay('agb')">AGB</a> |
+      <a onclick="openOverlay('datenschutz')">Datenschutz</a>
     </div>
   </div>
 </footer>
 
-<!-- MODAL -->
+<!-- MODAL Impressum -->
+<div class="overlay" id="overlayImpressum">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOverlay('impressum')">×</button>
+    <h2>Impressum</h2>
+    <div style="margin:1rem 0; color:var(--text);">
+      <p><strong>Angaben gemäß §5 ECG und §24 Mediengesetz</strong></p>
+      <p>Energy Bit<br>Achleitner Alexander<br>Oberau 11<br>4761 Enzenkirchen<br>Österreich</p>
+      <p>E-Mail: office@energy-bit.at<br>Webseite: https://energy-bit.at</p>
+      <p>EUASIC Hosting ist ein Service der Website energy-bit.at.</p>
+      <p><a href="https://energy-bit.at/policies/legal-notice" target="_blank">→ Zum Impressum auf energy-bit.at</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL AGB -->
+<div class="overlay" id="overlayAgb">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOverlay('agb')">×</button>
+    <h2>AGB</h2>
+    <div style="margin:1rem 0; color:var(--text);">
+      <p>Für alle Dienstleistungen gelten die Allgemeinen Geschäftsbedingungen der Website:</p>
+      <p><a href="https://energy-bit.at/policies/terms-of-service" target="_blank">https://energy-bit.at/policies/terms-of-service</a></p>
+      <p>Bitte lesen Sie die AGB vor Vertragsabschluss sorgfältig durch.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL Datenschutz -->
+<div class="overlay" id="overlayDatenschutz">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOverlay('datenschutz')">×</button>
+    <h2>Datenschutzerklärung</h2>
+    <div style="margin:1rem 0; color:var(--text);">
+      <p>Die Datenschutzerklärung gilt gemäß der Hauptwebsite:</p>
+      <p><a href="https://energy-bit.at/policies/privacy-policy" target="_blank">https://energy-bit.at/policies/privacy-policy</a></p>
+      <p>Hier finden Sie alle Informationen zur Verarbeitung Ihrer personenbezogenen Daten.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL Angebot (unverändert) -->
 <div class="overlay" id="ofOvl">
   <div class="modal">
     <button class="modal-close" onclick="closeOffer()">×</button>
@@ -561,7 +578,17 @@ function calcCost(){
   `;
 }
 
-// Modal
+// Overlays für Impressum, AGB, Datenschutz
+function openOverlay(type) {
+  document.getElementById('overlay' + type.charAt(0).toUpperCase() + type.slice(1)).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeOverlay(type) {
+  document.getElementById('overlay' + type.charAt(0).toUpperCase() + type.slice(1)).classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Modal Angebot
 window.openOfferModal = function() { 
   document.getElementById('ofOvl').classList.add('open'); 
   document.body.style.overflow = 'hidden'; 
